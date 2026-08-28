@@ -1,0 +1,68 @@
+name: Publish NGINX container
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set image name
+        run: |
+          echo "IMAGE_NAME=ghcr.io/${GITHUB_REPOSITORY,,}" >> "$GITHUB_ENV"
+
+      - name: Determine image tags
+        run: |
+          {
+            echo "IMAGE_TAGS<<EOF"
+            echo "${IMAGE_NAME}:latest"
+            echo "${IMAGE_NAME}:${GITHUB_SHA}"
+
+            git tag --points-at "$GITHUB_SHA" \
+              | grep -E '^v?[0-9]+\.[0-9]+\.[0-9]+([.-][0-9A-Za-z.-]+)?$' \
+              | while read -r tag; do
+                  echo "${IMAGE_NAME}:${tag}"
+                done
+
+            echo "EOF"
+          } >> "$GITHUB_ENV"
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create temporary Dockerfile
+        run: |
+          cat > /tmp/Dockerfile <<'EOF'
+          FROM nginx:alpine
+
+          RUN rm -rf /usr/share/nginx/html/*
+
+          COPY . /usr/share/nginx/html/
+          EOF
+
+      - name: Build and publish
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: /tmp/Dockerfile
+          push: true
+          tags: ${{ env.IMAGE_TAGS }}
