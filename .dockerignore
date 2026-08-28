@@ -1,0 +1,7 @@
+.*
+**/.*
+
+CNAME
+
+!.well-known/
+!.well-known/**
