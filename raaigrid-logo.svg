@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="310" viewBox="40 45 860 310" role="img" aria-labelledby="title desc">
+  <title id="title">RaaiGrid logo</title>
+  <desc id="desc">A detailed English ryegrass sprig rising from a perspective grid of blue data nodes, beside the RaaiGrid wordmark.</desc>
+  <defs>
+    <linearGradient id="leaf" x1="135" y1="315" x2="235" y2="82" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#063E2A"/><stop offset="1" stop-color="#276B3D"/></linearGradient>
+    <linearGradient id="field" x1="105" y1="85" x2="300" y2="320" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F8FBFD"/><stop offset="1" stop-color="#EAF2F7"/></linearGradient>
+    <clipPath id="fieldClip"><circle cx="200" cy="200" r="140"/></clipPath>
+  </defs>
+  <g aria-label="English ryegrass and data grid">
+    <circle cx="200" cy="200" r="140" fill="url(#field)"/><circle cx="200" cy="200" r="140" fill="none" stroke="#D8E6EF" stroke-width="2"/>
+    <g clip-path="url(#fieldClip)" fill="none" stroke="#7FA4C1" stroke-width="2.5" opacity="0.82">
+      <path d="M54 323H346M75 290H325M99 264H301M122 244H278M143 228H257"/><path d="M200 213L63 332M200 213L118 332M200 213L165 332M200 213V332M200 213L235 332M200 213L282 332M200 213L337 332"/>
+    </g>
+    <g fill="#2A6592" stroke="#F7FBFD" stroke-width="2.5">
+      <circle cx="143" cy="228" r="5"/><circle cx="200" cy="228" r="5"/><circle cx="257" cy="228" r="5"/><circle cx="159" cy="264" r="5"/><circle cx="200" cy="264" r="5"/><circle cx="241" cy="264" r="5"/><circle cx="117" cy="290" r="5"/><circle cx="173" cy="290" r="5"/><circle cx="227" cy="290" r="5"/><circle cx="283" cy="290" r="5"/><circle cx="145" cy="323" r="5"/><circle cx="200" cy="323" r="5"/><circle cx="255" cy="323" r="5"/>
+    </g>
+    <g stroke-linecap="round" stroke-linejoin="round">
+      <path d="M201 314C199 259 201 185 202 78" fill="none" stroke="#063E2A" stroke-width="6"/>
+      <path d="M200 311C174 284 143 259 103 241C139 249 174 268 201 294Z" fill="url(#leaf)"/><path d="M201 307C227 278 262 244 298 193C283 246 246 289 201 318Z" fill="url(#leaf)"/><path d="M200 282C179 234 154 196 125 171C160 195 188 232 201 267Z" fill="url(#leaf)"/><path d="M201 274C221 235 242 207 270 183C244 217 222 255 201 291Z" fill="#0B4D33"/><path d="M199 303C167 276 137 258 106 243M203 306C241 270 270 232 295 197" fill="none" stroke="#4D825E" stroke-width="1.8" opacity="0.85"/>
+      <g fill="url(#leaf)" stroke="#052F20" stroke-width="2"><path d="M203 89C214 80 227 80 237 87C228 99 215 103 203 98Z"/><path d="M201 105C191 95 178 94 168 101C176 114 189 118 201 113Z"/><path d="M202 122C213 111 227 111 237 118C228 132 215 136 202 131Z"/><path d="M201 140C190 129 176 129 166 136C175 150 188 154 201 149Z"/><path d="M201 158C213 147 226 147 236 154C227 168 214 172 201 167Z"/><path d="M201 176C191 166 179 165 169 172C177 185 189 189 201 184Z"/></g>
+      <g fill="none" stroke="#789A75" stroke-width="1.4"><path d="M209 91L226 86M209 95L225 94M194 105L179 100M194 110L180 109"/><path d="M209 123L226 117M209 127L225 126M194 140L178 135M194 145L179 144"/><path d="M209 159L225 153M209 163L224 162M194 176L180 171M194 181L181 180"/></g>
+    </g>
+    <circle cx="201" cy="320" r="10" fill="#0B5136" stroke="#FFFFFF" stroke-width="4"/>
+  </g>
+  <g aria-label="RaaiGrid"><text x="395" y="230" fill="#17324D" font-family="Inter, Avenir Next, Segoe UI, Arial, sans-serif" font-size="116" font-weight="760" letter-spacing="-4">Raai<tspan fill="#17633D">Grid</tspan></text></g>
+</svg>
